@@ -1,0 +1,57 @@
+@import '../../../styles/variables';
+
+.modal {
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  background: rgb(0 0 0 / 40%);
+  z-index: 999;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal__container {
+    width: 100%;
+    max-width: 1018px;
+    border-radius: 8px;
+    position: relative;
+
+    border: 1px solid $accent;
+
+    .modal__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      border-radius: 8px 8px 0 0;
+
+      background: $primary;
+
+      h2 {
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 700;
+
+        color: $text;
+      }
+    }
+
+    .modal__body {
+      height: 100%;
+      padding: 12px 20px 20px;
+      border-radius: 0 0 8px 8px;
+
+      background: $background;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

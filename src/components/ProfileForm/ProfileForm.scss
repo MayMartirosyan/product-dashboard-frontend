@@ -1,0 +1,40 @@
+@import '../../styles//variables';
+
+.profile-form {
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.profile-picture-preview {
+  margin-bottom: 1rem;
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.profile-picture-preview img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile-picture-input {
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: -0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-form-buttons {
+    display: flex;
+    gap: 12px;
+}

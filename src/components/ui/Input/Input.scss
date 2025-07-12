@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .input {
+    padding: 8px;
+    border: 1px solid $primary;
+    border-radius: $border-radius;
+    background: $background;
+    color: $text;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color: $accent;
+    }
+
+    &--error {
+      border-color: $error;
+    }
+  }
+
+  .input-error {
+    color: $error;
+    font-size: 12px;
+  }
+}

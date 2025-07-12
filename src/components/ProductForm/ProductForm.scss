@@ -1,0 +1,29 @@
+@import '../../styles//variables';
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: $padding;
+  
+    .product-form-textarea {
+      padding: 8px;
+      border: 1px solid $primary;
+      border-radius: $border-radius;
+      background: $background;
+      color: $text;
+      font-size: 16px;
+      min-height: 100px;
+      resize: vertical;
+  
+      &:focus {
+        outline: none;
+        border-color: $accent;
+      }
+    }
+  
+    .product-form-actions {
+      display: flex;
+      gap: 16px;
+    }
+  }

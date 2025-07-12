@@ -1,0 +1,21 @@
+@import './styles/variables';
+
+.nav {
+  background: $primary;
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: $padding;
+
+    a {
+      color: $text;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+    }
+  }
+}

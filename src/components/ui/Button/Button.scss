@@ -1,0 +1,42 @@
+@import '../../../styles/variables';
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &--primary {
+    background: $accent;
+    color: $text;
+
+    &:hover:not(:disabled) {
+      background: darken($accent, 10%);
+    }
+  }
+
+  &--secondary {
+    background: $secondary;
+    color: $text;
+
+    &:hover:not(:disabled) {
+      background: darken($secondary, 10%);
+    }
+  }
+
+  &--error {
+    background: $error;
+    color: $text;
+
+    &:hover:not(:disabled) {
+      background: darken($error, 10%);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
