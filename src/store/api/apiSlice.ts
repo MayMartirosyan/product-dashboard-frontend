@@ -2,26 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { AuthResponse, Product, User } from '../../types';
 import { BASE_URL } from '../../utils';
 
-interface SignUpData {
-  firstName: string;
-  lastName: string;
-  password: string;
-  birthDate?: string;
-  picture?: string;
-}
-
-interface SignInData {
-  firstName: string;
-  lastName: string;
-  password: string;
-}
-
-interface ProductData {
-  name: string;
-  price: number;
-  discountedPrice?: number;
-  picture?: string;
-  description?: string;
+interface PaginatedProducts {
+  products: Product[];
+  total: number;
+  hasMore: boolean;
 }
 
 export const apiSlice = createApi({
@@ -76,13 +60,17 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ['Profile'],
     }),
-    getProducts: builder.query<Product[], void>({
-      query: () => '/products',
-      providesTags: ['Products'],
+    getProducts: builder.query<PaginatedProducts, { page: number; limit: number }>({
+      query: ({ page, limit }) => ({
+        url: '/products',
+        params: { page, limit },
+      }),
     }),
-    getMyProducts: builder.query<Product[], void>({
-      query: () => '/products/my',
-      providesTags: ['Products'],
+    getMyProducts: builder.query<PaginatedProducts, { page: number; limit: number }>({
+      query: ({ page, limit }) => ({
+        url: '/products/my',
+        params: { page, limit },
+      }),
     }),
     getProductById: builder.query<Product, string>({
       query: (id) => `/products/${id}`,
